@@ -1,0 +1,25 @@
+---
+# tasks file for lsb-core
+
+- name: get /etc/system-release contents
+  shell: "cat /etc/system-release"
+  register: system_release
+  changed_when: no
+  check_mode: no
+
+- name: ensure non-'amazon linux 2' gets redhat-lsb-core
+  yum:
+    name: "redhat-lsb-core"
+    state: present
+  when:
+    - '"Amazon Linux release 2" not in system_release.stdout'
+
+- name: ensure 'amazon linux 2' gets system-lsb-core
+  yum:
+    name: "system-lsb-core"
+    state: present
+  when:
+    - '"Amazon Linux release 2" in system_release.stdout'
+
+- name: refresh ansible facts to include lsb
+  setup:
