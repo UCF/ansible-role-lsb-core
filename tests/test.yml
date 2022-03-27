@@ -2,4 +2,4 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - lsb-core
+    - ucf.ansible_role_lsb_core

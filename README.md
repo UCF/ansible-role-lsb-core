@@ -1,4 +1,4 @@
-lsb-core
+ucf.ansible_role_lsb_core
 =========
 
 Installs lsb core package on RHEL / CentOS 7 / Amazon Linux 2 and re-runs ansible `setup` module so that ansible lsb facts are gathered.  
@@ -28,7 +28,7 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: servers
       roles:
-         - { role: ucf.lsb-core }
+         - { role: ucf.ucf.ansible_role_lsb_core }
 
 License
 -------

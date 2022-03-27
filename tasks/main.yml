@@ -1,5 +1,5 @@
 ---
-# tasks file for lsb-core
+# tasks file for ucf.ansible_role_lsb_core
 
 - name: get /etc/system-release contents
   shell: "cat /etc/system-release"
